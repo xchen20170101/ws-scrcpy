@@ -32,6 +32,10 @@ async function loadGoogModules() {
         mw2List.push(DeviceTracker);
     }
 
+    if (config.getRunLocalGoogTracker()) {
+        mwList.push(DeviceTracker); // was mw2List
+    }
+
     if (config.getAnnounceLocalGoogTracker()) {
         HostTracker.registerLocalTracker(DeviceTracker);
     }

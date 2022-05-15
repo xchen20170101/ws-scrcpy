@@ -65,6 +65,10 @@ export class DeviceTracker extends BaseDeviceTracker<GoogDeviceDescriptor, never
         // nothing here;
     }
 
+    protected supportMultiplexing(): boolean {
+        return false;
+    }
+
     protected setIdAndHostName(id: string, hostName: string): void {
         super.setIdAndHostName(id, hostName);
         for (const value of DeviceTracker.instancesByUrl.values()) {
